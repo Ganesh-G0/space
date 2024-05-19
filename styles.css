@@ -125,17 +125,6 @@ textarea,
 select {
   font: inherit;
 }
-/* -------------------------------------------------remove animations for people who've turned them off----------------------------------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
 /* -------------------------------------------------General----------------------------------------------------- */
 .nav-text {
   font-family: var(--ff-barlowCondensed);
@@ -264,6 +253,9 @@ select {
 .menu-links > *:focus {
   padding-right: 2rem;
   border-right: 0.2rem solid hsl(var(--white) / 0.5);
+}
+.mobile-nav-toggle:hover {
+  cursor: pointer;
 }
 /* ------------------------------------------------------------Main---------------------------------------------- */
 .grid-container {
@@ -438,21 +430,7 @@ select {
     padding: 2rem 0;
     align-items: center;
   }
-  /*
-     #desktop-nav .brand {
-        width: 20%;
-    }
-    .line-through {
-        width: 100%;
-        z-index: 0;
-        margin-left: 1rem;
-        margin-right: -4rem;
-    }
-    .primary-navigation {
-        width: 40%;
-    } 
-    */
-  .grid-container {
+   .grid-container {
     width: 90%;
     padding: 1rem;
     display: grid;
