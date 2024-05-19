@@ -1,0 +1,151 @@
+@import url(../styles.css);
+@import url(../Destination/moon.css);
+/* ----------------------------------------------------------Home--------------------------------------------- */
+.crew {
+  /* mix-blend-mode: screen; */
+  color: hsl(var(--white));
+  background: whitesmoke url(./assets/background-crew-mobile.jpg) no-repeat 0px 0px / 100% 100%;  
+}
+/* ------------------------------------Container------------------------------------ */
+.grid-crew {
+  gap: 2rem;
+  width: 90%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.grid-crew > .img-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid hsl(var(--white) / .5);
+}
+.grid-crew img {
+  max-width: 327px;
+  max-height: 223px;
+}
+/* ---------------------dot indicators------------------------------- */
+.dot-indicators button {
+  cursor: pointer;
+  padding: .7em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 0;
+  margin: 1em;
+  background-color: hsl(var(--white) /.1);
+}
+.dot-indicators .active {
+  background-color: hsl(var(--white));
+}
+.dot-indicators  button:hover,
+.dot-indicators  button:focus {
+  background-color: hsl(var(--white) / .5);
+}
+/* -------------------------------------------------------------text area */
+.text-area h1 {
+  font-size: 1.62rem;
+  color: hsl(var(--white) / .5);
+}
+.text-area h2 {
+  font-size: 2.5rem;
+  font-weight: 100;
+  color: hsl(var(--white));
+  font-family: var(--ff-belleFair);
+}
+.text-area p {
+  color: hsl(var(--accent) / .8);
+  color: hsl(var(--white) / .8);
+  font-size: 1.7rem;
+  max-width: 42ch;
+}
+
+/* -----------------------------------------------------------------------------------Media Queries */
+@media (min-width: 768px) {
+  .crew {
+    background-color: white;
+    background-image: url(./assets/background-crew-tablet.jpg);
+  }
+  main {
+    gap: 5rem;
+  }
+  .grid-crew {
+    gap: 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "txt"
+    "dotNav"
+    "img"
+    ;
+  }
+  .grid-crew > .img-div {
+    border: 0px;
+    grid-area: img;
+  }
+  .dot-indicators {
+    grid-area: dotNav;
+  }
+  .text-area {
+    grid-area: txt;
+  }
+  .grid-crew img {
+    max-width: 456px;
+    max-height: 572px;
+  }
+  .text-area h1 {
+    font-size: 3rem;
+    color: hsl(var(--white) / .5);
+  }
+  .text-area h2 {
+    font-size: 4.5rem;
+  }
+  .text-area p {
+    padding: 0;
+    font-size: 3rem;
+    max-width: 50ch;
+  }
+}
+@media (min-width: 1024px) {
+  .crew {
+    background-image: url(./assets/background-crew-desktop.jpg);
+  }
+  main {
+    gap: 0;
+  }
+  .grid-crew {
+    gap: 0;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1.5fr .2fr 1fr;
+    grid-template-areas: 
+    "txt . img"
+    "dotNav . img"
+    ;
+    justify-items: start;
+    align-items: end;
+    align-items: center;
+  }
+  .grid-crew > .img-div {
+    border-bottom: 1px solid white;
+    grid-area: img;
+  }
+  .grid-crew img {
+    width: 100%;
+    height: 100%;
+    max-width: 568px;
+    max-height: 712px;
+  }
+  .text-area h1 {
+    font-size: 3.5rem;
+  }
+  .text-area h2 {
+    font-size: 5rem;
+  }
+  .text-area p {
+    font-size: 3.2rem;
+    max-width: 55ch;
+  }
+}
